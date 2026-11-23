@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1c16">
+  <meta name="description" content="You’re invited to our Christmas celebration. Check back for event details and the RSVP form.">
+  <title>Christmas Celebration</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, sans-serif;
+      background: #0b1c16;
+      color: #fff7e7;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+
+    main {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      align-items: center;
+      min-height: 100svh;
+      padding: clamp(1.5rem, 7vw, 8rem);
+      background: #0b1c16;
+    }
+
+    picture, picture img, main::after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    picture { z-index: -2; }
+    picture img { object-fit: contain; object-position: right center; }
+    main::after {
+      content: '';
+      z-index: -1;
+      background: linear-gradient(90deg, #0b1c16 0%, #0b1c16d9 28%, #0b1c1630 60%, transparent 82%);
+    }
+
+    .invitation {
+      width: min(100%, 37rem);
+      padding-block: 2rem;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      color: #f3ce84;
+      font-size: 1.4rem;
+      margin-block-end: 1rem;
+    }
+
+    .ornament::before, .ornament::after {
+      content: '';
+      width: 2.75rem;
+      height: 1px;
+      background: #f3ce8480;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.3rem, 7vw, 7rem);
+      letter-spacing: -.055em;
+      line-height: .93;
+      margin: 0;
+    }
+
+    h1 em { color: #f3ce84; font-weight: inherit; }
+
+    p {
+      color: #ecdfca;
+      font-size: clamp(1rem, 1.55vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 26rem;
+      margin: 1.5rem 0;
+    }
+
+    dl {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem 2rem;
+      margin: 0 0 1.5rem;
+    }
+
+    dt {
+      color: #f3ce84;
+      font-size: .875rem;
+      font-weight: 700;
+    }
+
+    dd { margin: .25rem 0 0; color: #fff7e7; }
+
+    .rsvp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.25rem;
+      padding: .65rem 1.35rem;
+      border: 1px solid #f3ce84;
+      border-radius: .25rem;
+      background: #f3ce84;
+      color: #182019;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a.rsvp:hover { background: #ffe4ad; }
+    a.rsvp:focus-visible { outline: 2px solid #fff7e7; outline-offset: 4px; }
+    .pending { background: #172b21; color: #f3ce84; }
+
+    @media (max-width: 730px) {
+      main {
+        align-items: end;
+        min-height: max(100svh, 45rem);
+        padding: 1.5rem;
+      }
+      picture { height: 74%; }
+      picture img { object-fit: cover; object-position: 91% top; }
+      main::after {
+        background: linear-gradient(0deg, #0b1c16 14%, #0b1c16e8 31%, #0b1c1666 49%, transparent 72%);
+      }
+      .invitation { padding-block: 0 1rem; }
+      h1 { font-size: clamp(3.1rem, 11vw, 5rem); }
+      p { margin-block: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <picture>
+      <img src="christmas-tree.webp" alt="A Christmas tree decorated with warm fairy lights and red and gold ornaments">
+    </picture>
+    <section class="invitation" aria-labelledby="event-title">
+      <div class="ornament" aria-hidden="true">✦</div>
+      <h1 id="event-title">Christmas<br><em>Celebration</em></h1>
+      <p>You’re invited to celebrate Christmas with us. We’d love to see you there!</p>
+      <dl>
+        <div>
+          <dt>Date and time</dt>
+          <dd>To be announced</dd>
+        </div>
+        <div>
+          <dt>Venue</dt>
+          <dd>To be announced</dd>
+        </div>
+      </dl>
+      <!-- When the Google Form is published, replace the span below with:
+           <a class="rsvp" href="GOOGLE_FORM_RESPONDER_URL">RSVP on Google Forms</a> -->
+      <span class="rsvp pending">RSVP link coming soon</span>
+    </section>
+  </main>
+</body>
+</html>
