@@ -27,15 +27,46 @@
       background: #0b1c16;
     }
 
-    picture, picture img, main::after {
+    picture, picture img, .snow, main::after {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
     }
 
-    picture { z-index: -2; }
+    picture { z-index: -3; }
     picture img { object-fit: contain; object-position: right center; }
+    .snow {
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .snow::before, .snow::after {
+      content: '';
+      position: absolute;
+      inset: -20rem 0 0;
+      background-image:
+        radial-gradient(circle at 15% 30%, #fff9ecb8 0 .08rem, transparent .14rem),
+        radial-gradient(circle at 61% 62%, #fff9ec83 0 .06rem, transparent .12rem),
+        radial-gradient(circle at 80% 14%, #fff9ec95 0 .09rem, transparent .16rem),
+        radial-gradient(circle at 29% 86%, #fff9ec6b 0 .06rem, transparent .12rem);
+      background-size: 16rem 20rem;
+      animation: fall 22s linear infinite;
+    }
+
+    .snow::after {
+      background-size: 21rem 20rem;
+      background-position: 6rem 7rem;
+      opacity: .53;
+      animation-duration: 34s;
+      animation-delay: -13s;
+    }
+
+    @keyframes fall {
+      to { transform: translateY(20rem); }
+    }
+
     main::after {
       content: '';
       z-index: -1;
@@ -117,14 +148,18 @@
 
     @media (max-width: 730px) {
       main {
-        align-items: end;
-        min-height: max(100svh, 45rem);
-        padding: 1.5rem;
+        align-items: start;
+        padding: clamp(19rem, 50svh, 31rem) 1.5rem 2rem;
       }
-      picture { height: 74%; }
-      picture img { object-fit: cover; object-position: 91% top; }
+      picture, .snow { height: clamp(22rem, 58svh, 35rem); }
+      picture img { object-fit: cover; object-position: center top; }
       main::after {
-        background: linear-gradient(0deg, #0b1c16 14%, #0b1c16e8 31%, #0b1c1666 49%, transparent 72%);
+        background: linear-gradient(
+          to bottom,
+          transparent 15rem,
+          #0b1c1699 clamp(19rem, 50svh, 31rem),
+          #0b1c16 clamp(22rem, 58svh, 35rem)
+        );
       }
       .invitation { padding-block: 0 1rem; }
       h1 { font-size: clamp(3.1rem, 11vw, 5rem); }
@@ -135,8 +170,10 @@
 <body>
   <main>
     <picture>
+      <source media="(max-width: 730px)" srcset="christmas-tree-portrait.webp">
       <img src="christmas-tree.webp" alt="A Christmas tree decorated with warm fairy lights and red and gold ornaments">
     </picture>
+    <div class="snow" aria-hidden="true"></div>
     <section class="invitation" aria-labelledby="event-title">
       <div class="ornament" aria-hidden="true">✦</div>
       <h1 id="event-title">Christmas<br><em>Celebration</em></h1>
