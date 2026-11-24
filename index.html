@@ -6,10 +6,14 @@
   <meta name="theme-color" content="#0b1c16">
   <meta name="description" content="You’re invited to our Christmas celebration. Check back for event details and the RSVP form.">
   <title>Christmas Celebration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap">
   <style>
     :root {
       color-scheme: dark;
       font-family: system-ui, sans-serif;
+      --form-font: "Nunito", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
       background: #0b1c16;
       color: #fff7e7;
     }
@@ -152,11 +156,12 @@
       background: #10261ef2;
       border: 1px solid #f3ce8466;
       border-radius: .5rem;
+      font-family: var(--form-font);
     }
 
     h2 {
       margin: 0 0 .8rem;
-      font: 400 1.75rem Georgia, serif;
+      font: 400 1.75rem Georgia, "Noto Sans SC", serif;
     }
 
     fieldset { display: grid; gap: .8rem; padding: 0; margin: 0; border: 0; min-width: 0; }
