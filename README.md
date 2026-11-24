@@ -8,7 +8,7 @@ The invitation is a static GitHub Pages site. Its built-in RSVP form sends submi
 2. Open **Extensions → Apps Script**, replace the contents of `Code.gs` with [the RSVP script](google-sheets/Code.gs), and save.
 3. Select `setupRsvp` in the function dropdown and click **Run**. Approve the requested spreadsheet access. This prepares the **RSVPs** tab and associates the script with the spreadsheet.
 4. Choose **Deploy → New deployment → Web app**. Set **Execute as** to **Me** and **Who has access** to **Anyone** so guests can submit without signing into Google. Leave the Sheet itself private.
-5. Copy the deployed web app URL ending in `/exec`. Add it as the `action` on the RSVP form in `index.html`, remove `disabled` from the fieldset, and remove the “RSVPs will open soon” paragraph.
+5. If you replace the current deployment, copy the web app URL ending in `/exec` and update the form’s `action` in `index.html`.
 6. After the site updates, submit a test RSVP in a signed-out browser. Check that the confirmation appears and that the row is in the **RSVPs** tab.
 
 ## Enable GitHub Pages

@@ -144,7 +144,6 @@
 
     .rsvp:enabled { cursor: pointer; }
     .rsvp:enabled:hover { background: #ffe4ad; }
-    .rsvp:disabled { background: #243b2f; color: #f1d398; }
     :focus-visible { outline: 2px solid #fff7e7; outline-offset: 3px; }
 
     form {
@@ -176,9 +175,8 @@
       font-size: 1rem;
     }
 
-    input:disabled, select:disabled { opacity: .68; }
+    input:disabled { opacity: .68; }
     .rsvp { font-family: inherit; font-size: 1rem; }
-    .form-note { margin: 0 0 .8rem; font-size: .9rem; }
 
     @media (max-width: 730px) {
       main {
@@ -222,10 +220,9 @@
           <dd>To be announced</dd>
         </div>
       </dl>
-      <form id="rsvp-form" method="post" action="https://script.google.com/macros/s/AKfycbx2iybgj34sIr1E1YlWRU0w2HOMP6CLCt4Hl1cc_4KMf-GA8lMdDiYH3IAaDe00Fdln/exec" aria-labelledby="rsvp-title">
+      <form id="rsvp-form" method="post" action="https://script.google.com/macros/s/AKfycbyk-vfcuSWeAaSet4oLcAoEDI5P3Q6wUb6VD6hzZc4o7NgjhqpSy3WuxLPoVSYt5tCy/exec" aria-labelledby="rsvp-title">
         <h2 id="rsvp-title">RSVP</h2>
-        <p class="form-note">RSVPs will open soon.</p>
-        <fieldset disabled>
+        <fieldset>
           <input type="hidden" name="submissionId">
           <label>Your name
             <input name="guestName" autocomplete="name" maxlength="100" required>
